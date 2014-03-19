@@ -1,7 +1,9 @@
+import math
+
 # helper fns
 
 def is_prime(num):
-	for x in range(2, num):
+	for x in range(2, int(num)):
 		if (num % x == 0):	return False
 	return True
 
@@ -12,13 +14,19 @@ def lgst_prime_factor(num):
 			return x
 
 
-num = 6008#51475143
+num = 600851475143
 # print(lgst_prime_factor(num))
 
-factor = 3; 
-while(num > 1):
-	if(num % factor == 0):
-		num/=factor;
-	else:
-		factor += 2; #skip even numbrs
-print(factor);
+num_sqrt = math.floor(math.sqrt(num))
+# print(num_sqrt)
+
+prime_factors = []
+
+for x in range(num_sqrt,1,-1):
+	if (num % x == 0):
+		if is_prime(x):
+			prime_factors.append(x)
+		if is_prime(num/x):
+			prime_factors.append(num/x)
+prime_factors.sort()
+print("prime_factors (ascending):", prime_factors)
