@@ -1,13 +1,12 @@
 # define the Vehicle class
 class Vehicle:
-    name = ""
-    kind = "car"
-    color = ""
-    value = 100.00
-    def description(self):
-        desc_str = "%s is a %s %s worth $%.2f." % (self.name, self.color, self.kind, self.value)
-        return desc_str
-# your code goes here
+  name = ""
+  kind = "car"
+  color = ""w
+  value = 100.00
+  def description(self):
+    desc_str = "%s is a %s %s worth $%.2f." % (self.name, self.color, self.kind, self.value)
+    return desc_str
 
 # test code
 car1 = Vehicle()
@@ -21,10 +20,19 @@ print(car2.description())
 
 
 phonebook = {
-    "John" : 938477566,
-    "Jack" : 938377264,
-    "Jill" : 947662781
+  "John" : 938477566,
+  "Jack" : 938377264
 }
 
 for name, number in phonebook.items():
-    print(name,"'s phone number is ", number, sep="")
+  print(name,"'s phone number is ", number, sep="")
+
+
+def spam(eggs):
+  eggs.append(1)
+  eggs = [2, 3]
+
+ham = [0]
+print("ham:", ham)
+spam(ham)
+print("ham:", ham)
